@@ -15,4 +15,4 @@ mongoose.connect(mongoURL, () => {
 const execScript = async () => {
 
 };
-execScript();
+// execScript();

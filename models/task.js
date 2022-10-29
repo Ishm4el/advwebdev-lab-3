@@ -24,7 +24,7 @@ const TaskSchema = new Schema({
 		date_due: String,
 		date_last_updated: String,
 	},
-	user: { type: mongoose.Schema.Types.ObjectID, ref: 'User' },
+	user: {type: mongoose.Schema.Types.ObjectID, ref: 'User'},
 	project: { type: mongoose.Schema.Types.ObjectID, ref: 'Project' },
 });
 

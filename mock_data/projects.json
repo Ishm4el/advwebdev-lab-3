@@ -1,0 +1,22 @@
+[
+    {
+        "project_id" : 0,
+        "name": "Dava Diffusion",
+        "describption" : "Generate ai art works inspired by leonardo davinci",
+        "relatedRepo" : "Stable Diffusion",
+        "associatedURL" : "davadi.com/AMD",
+        "manager" : "Ish Valenzuela",
+        "tasks_ids" : [0, 1],
+        "user_ids" : [0, 1]
+    },
+    {
+        "project_id" : 1,
+        "name": "Anaconda With Dava",
+        "describption" : "Utilize more packages from the anaconda core",
+        "relatedRepo" : "Stable Diffusion Conda",
+        "associatedURL" : "davadi.com/anaconda",
+        "manager" : "Isabella Vel",
+        "tasks_ids" : [2],
+        "user_ids" : [2]
+    },
+]

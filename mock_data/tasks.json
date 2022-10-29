@@ -1,0 +1,41 @@
+[
+	{
+		"name" : "amd support",
+		"details" : "upgrade to support new drivers",
+		"priority" : "high",
+		"status" : "in progress",
+		"timeline" : {
+			"date_assigned" : "November 21",
+			"date_due" : "December 21",
+			"date_last_update" : "November 28"
+		},
+		"primary_user" : "Ish",
+		"task_id" : 0
+	},
+	{
+		"name" : "Emulating Nvidia Drivers on AMD",
+		"details" : "Incorporate methods used by nvidia onto AMD cards",
+		"priority" : "low",
+		"status" : "in progress",
+		"timeline" : {
+			"date_assigned" : "November 29",
+			"date_due" : "December 16",
+			"date_last_update" : "December 1"
+		},
+		"primary_user" : "Ish",
+		"task_id" : 1
+	},
+	{
+		"name" : "Leonardo Davinci High Res",
+		"details" : "Gather and Incorporate data sets containing davinci art works",
+		"priority" : "high",
+		"status" : "in progress",
+		"timeline" : {
+			"date_assigned" : "November 1",
+			"date_due" : "December 28",
+			"date_last_update" : "November 5"
+		},
+		"primary_user" : "Isabella",
+		"task_id" : 0
+	},
+]

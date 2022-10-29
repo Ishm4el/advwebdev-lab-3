@@ -1,0 +1,93 @@
+Ismael R. Valenzuela
+
+METHOD   /resource
+   - query parameter(s) (if applicable)
+   - description of the response that this resource endpoint returns
+
+
+Get all projects (including the ability to search by partial name)
+GET/projects
+GET/projects?search=text
+
+Get all tasks
+GET/tasks
+
+Get all users (including the ability to search by active/inactive)
+GET/users
+GET/users?search=personname
+
+
+Get a project by id.
+  If the project has tasks and/or users it should include the count/number of these.
+  If a project does not exist it should return an error.
+GET/project/:id
+
+Get a task by id.
+  If the task does not exist it should return an error
+GET/task/:id
+
+Get a user by id.
+  If the user does not exist it should return an error
+GET/task/:id
+
+
+Add a project.
+  Project names must be unique.
+POST/project
+json:
+[
+{
+   "project_id" : 2,
+        "name": "Harmonious Enlightenment Diffusion",
+        "describption" : "Generate ai art works inspired by Budhist Eastern artworks",
+        "relatedRepo" : "Budha Art with Machine learning",
+        "associatedURL" : "davadi.com/harmony",
+        "manager" : "Elisa",
+        "tasks_ids" : [],
+        "user_ids" : [3]
+}
+]
+
+Add a task.
+POST/task
+[
+{
+      "name" : "Eastern artwork and machine learning",
+      "details" : "Generate new eastern art works",
+      "priority" : "high",
+      "status" : "in progress",
+      "timeline" : {
+         "date_assigned" : "November 29",
+         "date_due" : "December 31",
+         "date_last_update" : "December 1"
+      },
+      "primary_user" : "Elisa",
+      "task_id" : 4
+}
+]
+
+
+
+Update a project by id.
+  Project names must be unique.
+  If a project does not exist it should return an error.
+PUT/project/:id
+due_date : "December 31"
+
+
+Update a task by id. 
+  A task (name, detail and timeline object) is only able to be updated as long as the status is "assigned".  Status can always be updated.
+  If the task does not exist it should return an error
+PUT/task/:id=number
+active = true
+
+Update a user by id.
+  ability to flag as inactive.
+  Inactive users should be included the results of "Get all users" endpoint (the endpoint listed at the at the top) when no search is used.
+  If a user does not exist it should return an error
+PUT/task/:id=number
+
+
+Delete a task by id
+  If the task does not exist it should return an error.
+DELETE/user/:id=number

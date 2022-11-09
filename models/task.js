@@ -25,7 +25,19 @@ const TaskSchema = new Schema({
 		date_last_updated: String,
 	},
 	user: {type: mongoose.Schema.Types.ObjectID, ref: 'User'},
-	project: { type: mongoose.Schema.Types.ObjectID, ref: 'Project' },
+},
+    {
+        // ensure `res.json()` include virtuals
+        toJSON: { virtuals: true },
+        // ensure `console.log()` include virtuals
+        toObject: { virtuals: true },
+    }
+);
+
+TaskSchema.virtual('project', {
+    ref: 'Project',
+    localField: '_id',
+    foreignField: 'tasks',
 });
 
 const Task = mongoose.model('Task', TaskSchema);

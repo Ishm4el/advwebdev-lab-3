@@ -7,8 +7,25 @@ const UserSchema = new Schema({
 	last_name: String,
 	title: String,
 	active: Boolean,
-	project: { type: mongoose.Schema.Types.ObjectID, ref: 'Project' },
-	tasks: [{ type: mongoose.Schema.Types.ObjectID, ref: 'Task' }],
+},
+    {
+        // ensure `res.json()` include virtuals
+        toJSON: { virtuals: true },
+        // ensure `console.log()` include virtuals
+        toObject: { virtuals: true },
+    }
+);
+
+UserSchema.virtual('task', {
+    ref: 'Task',
+    localField: '_id',
+    foreignField: 'users',
+});
+
+UserSchema.virtual('project', {
+	ref: 'Project',
+	localField: '_id',
+	foreignField: 'users',
 });
 
 const User = mongoose.model('User', UserSchema);

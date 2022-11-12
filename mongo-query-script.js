@@ -29,6 +29,12 @@ const execScript = async () => {
         "title" : "Art lead",
         "active" : true,
     })
+    const user2  = await User.create({
+        "first_name" : "Anna",
+        "last_name" : "Lee",
+        "title" : "Programming Director",
+        "active" : false,
+    })
 
     await Task.deleteMany({});
     const task = await Task.create({
